@@ -132,6 +132,7 @@ export default function ShilnakwonPage() {
     <main className="shil-page">
       {/* ═══════ HERO ═══════ */}
       <header className="hero">
+        <Image src="/icons/header-logo.png" alt="쉴낙원" width={60} height={60} unoptimized className="hero-logo" />
         <h1 className="hero-title">쉴낙원 안양 장례식장 서비스 안내</h1>
         <p className="hero-sub">마지막 이별의 순간, 가족과 같은 마음으로 함께 하겠습니다.</p>
         <div className="hero-divider" />
@@ -345,6 +346,13 @@ export default function ShilnakwonPage() {
         {/* ── 가격표 ── */}
         <div className="menu-table-wrap">
           <table className="menu-table">
+            <colgroup>
+              <col className="col-cat" />
+              <col className="col-menu" />
+              <col className="col-unit" />
+              <col className="col-price" />
+              <col className="col-note" />
+            </colgroup>
             <thead>
               <tr>
                 <th>구분</th>

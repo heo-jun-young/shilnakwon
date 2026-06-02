@@ -43,7 +43,7 @@ body {
   padding: 50px 20px 45px;
   color: var(--white);
 }
-.hero-icon { font-size: 36px; margin-bottom: 8px; opacity: 0.9; }
+.hero-logo { width: 60px; height: auto; margin: 0 auto 16px; display: block; }
 .hero-eng { font-size: 13px; letter-spacing: 6px; color: var(--gold-light); margin-bottom: 12px; font-weight: 300; }
 .hero-title { font-size: 26px; font-weight: 700; margin-bottom: 14px; letter-spacing: 1px; line-height: 1.3; }
 .hero-sub { font-size: 14px; color: #bbb; font-weight: 300; margin-bottom: 24px; }
@@ -158,7 +158,7 @@ body {
   border-radius: 50%;
   overflow: hidden;
   flex-shrink: 0;
-  background: transparent;
+  background: #4a4a4a;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -166,7 +166,9 @@ body {
 .method-icon-wrap img {
   width: 100% !important;
   height: 100% !important;
-  object-fit: contain !important;
+  object-fit: cover !important;
+  transform: scale(2.5);
+  transform-origin: center center;
 }
 .method-content { flex: 1; }
 .method-num { font-size: 15px; font-weight: 700; color: var(--gold); display: block; margin-bottom: 4px; }
@@ -257,7 +259,7 @@ body {
 .menu-category { width: 60px; font-weight: 700; text-align: center; background: var(--bg-cream-light); white-space: nowrap; vertical-align: middle !important; }
 .menu-name { font-weight: 600; color: var(--text-dark) !important; white-space: nowrap; }
 .menu-unit, .menu-price { text-align: center; white-space: nowrap; }
-.menu-note { font-size: 11px !important; color: var(--text-muted) !important; line-height: 1.6; max-width: 180px; }
+.menu-note { font-size: 11px !important; color: var(--text-muted) !important; line-height: 1.5; max-width: 180px; word-break: keep-all; }
 .menu-origin { font-size: 12px; color: var(--text-body); line-height: 1.6; }
 .menu-notice { font-size: 13px; color: var(--text-muted); margin-top: 20px; }
 
@@ -278,12 +280,12 @@ body {
   padding: 16px;
 }
 .allergy-icon-wrap {
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
   flex-shrink: 0;
   border-radius: 50%;
   overflow: hidden;
-  background: transparent;
+  background: #4a4a4a;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -291,7 +293,9 @@ body {
 .allergy-icon-wrap img {
   width: 100% !important;
   height: 100% !important;
-  object-fit: contain !important;
+  object-fit: cover !important;
+  transform: scale(2.5);
+  transform-origin: center center;
 }
 .allergy-name { font-size: 16px; font-weight: 700; color: var(--text-dark); display: block; margin-bottom: 4px; }
 .allergy-items { font-size: 14px; color: var(--text-body); line-height: 1.6; }
@@ -397,11 +401,25 @@ body {
 }
 
 @media (max-width: 768px) {
-  .menu-table { font-size: 11px; }
-  .menu-table thead th { padding: 6px 4px; font-size: 11px; }
-  .menu-table tbody td { padding: 6px 4px; font-size: 11px; }
-  .menu-category { width: 60px; }
-  .menu-note { font-size: 10px !important; max-width: 140px; }
-  .menu-origin { font-size: 11px; }
+  /* 메뉴 테이블: 가로스크롤 없이 한 화면에 */
+  .menu-table-wrap { overflow-x: visible; }
+  .menu-table {
+    min-width: 0;
+    width: 100%;
+    table-layout: fixed;
+    font-size: 10px;
+  }
+  .menu-table thead th { padding: 5px 2px; font-size: 10px; white-space: normal; }
+  .menu-table tbody td { padding: 4px 2px; font-size: 10px; }
+  .menu-category { width: 45px; font-size: 10px; }
+  .menu-name { width: auto; white-space: normal; word-break: keep-all; }
+  col.col-cat   { width: 45px; }
+  col.col-menu  { width: auto; }
+  col.col-unit  { width: 35px; }
+  col.col-price { width: auto; }
+  col.col-note  { width: 100px; }
+  .menu-note { font-size: 9px !important; max-width: none; line-height: 1.4; word-break: keep-all; }
+  .menu-unit, .menu-price { white-space: normal; }
+  .menu-origin { font-size: 10px; word-break: keep-all; }
   .allergy-grid { grid-template-columns: repeat(2, 1fr); }
 }
