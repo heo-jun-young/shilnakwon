@@ -339,7 +339,6 @@ export default function ShilnakwonPage() {
               unoptimized
               style={{ objectFit: "contain" }}
             />
-            <p className="menu-logo-label">HUE · DINING</p>
           </div>
         </div>
 

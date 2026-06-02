@@ -262,15 +262,20 @@ body {
 .menu-notice { font-size: 13px; color: var(--text-muted); margin-top: 20px; }
 
 /* ═══════ ALLERGY ═══════ */
-.allergy-grid { display: flex; flex-direction: column; gap: 16px; margin-bottom: 24px; }
+.allergy-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 24px;
+}
 .allergy-card {
   display: flex;
   align-items: flex-start;
-  gap: 16px;
+  gap: 12px;
   background: var(--white);
   border: 1px solid var(--border-lighter);
   border-radius: 12px;
-  padding: 20px;
+  padding: 16px;
 }
 .allergy-icon-wrap {
   width: 50px;
@@ -398,4 +403,5 @@ body {
   .menu-category { width: 60px; }
   .menu-note { font-size: 10px !important; max-width: 140px; }
   .menu-origin { font-size: 11px; }
+  .allergy-grid { grid-template-columns: repeat(2, 1fr); }
 }
