@@ -242,8 +242,8 @@ body {
 }
 
 /* ═══════ MENU TABLE ═══════ */
-.menu-table-wrap { overflow-x: auto; margin-bottom: 8px; }
-.menu-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.menu-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom: 8px; }
+.menu-table { width: 100%; min-width: 600px; border-collapse: collapse; font-size: 13px; }
 .menu-table thead th {
   background: var(--table-header);
   color: var(--white);
@@ -254,8 +254,8 @@ body {
   white-space: nowrap;
 }
 .menu-table tbody td { padding: 8px; border-bottom: 1px solid var(--border-lighter); vertical-align: top; font-size: 13px; color: var(--text-body); }
-.menu-category { font-weight: 700; text-align: center; background: var(--bg-cream-light); white-space: nowrap; vertical-align: middle !important; }
-.menu-name { font-weight: 600; color: var(--text-dark) !important; }
+.menu-category { width: 60px; font-weight: 700; text-align: center; background: var(--bg-cream-light); white-space: nowrap; vertical-align: middle !important; }
+.menu-name { font-weight: 600; color: var(--text-dark) !important; white-space: nowrap; }
 .menu-unit, .menu-price { text-align: center; white-space: nowrap; }
 .menu-note { font-size: 11px !important; color: var(--text-muted) !important; line-height: 1.6; max-width: 180px; }
 .menu-origin { font-size: 12px; color: var(--text-body); line-height: 1.6; }
@@ -387,7 +387,15 @@ body {
   .hanja-grid { gap: 8px; }
   .hanja-text { font-size: 22px; }
   .tab-btn { font-size: 13px; padding: 12px 6px; }
-  .menu-table { font-size: 11px; }
   .method-item { gap: 14px; }
   .method-icon-wrap { width: 72px; height: 72px; }
+}
+
+@media (max-width: 768px) {
+  .menu-table { font-size: 11px; }
+  .menu-table thead th { padding: 6px 4px; font-size: 11px; }
+  .menu-table tbody td { padding: 6px 4px; font-size: 11px; }
+  .menu-category { width: 60px; }
+  .menu-note { font-size: 10px !important; max-width: 140px; }
+  .menu-origin { font-size: 11px; }
 }
