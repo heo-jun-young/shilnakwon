@@ -153,21 +153,20 @@ body {
   border-bottom: 1px solid var(--border-lighter);
 }
 .method-icon-wrap {
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
   overflow: hidden;
   flex-shrink: 0;
-  background: #000;
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .method-icon-wrap img {
-  width: 300% !important;
-  height: 300% !important;
-  object-fit: none !important;
-  object-position: center center !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
 }
 .method-content { flex: 1; }
 .method-num { font-size: 15px; font-weight: 700; color: var(--gold); display: block; margin-bottom: 4px; }
@@ -214,6 +213,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  margin-top: 20px;
   margin-bottom: 24px;
   gap: 16px;
 }
@@ -273,21 +273,20 @@ body {
   padding: 20px;
 }
 .allergy-icon-wrap {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   flex-shrink: 0;
   border-radius: 50%;
   overflow: hidden;
-  background: #000;
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .allergy-icon-wrap img {
-  width: 300% !important;
-  height: 300% !important;
-  object-fit: none !important;
-  object-position: center center !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
 }
 .allergy-name { font-size: 16px; font-weight: 700; color: var(--text-dark); display: block; margin-bottom: 4px; }
 .allergy-items { font-size: 14px; color: var(--text-body); line-height: 1.6; }
@@ -390,5 +389,5 @@ body {
   .tab-btn { font-size: 13px; padding: 12px 6px; }
   .menu-table { font-size: 11px; }
   .method-item { gap: 14px; }
-  .method-icon-wrap { width: 80px; height: 80px; }
+  .method-icon-wrap { width: 72px; height: 72px; }
 }

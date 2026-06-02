@@ -94,45 +94,6 @@ const MENU_DATA: Record<string, { menu: string; unit: string; price: string; not
   ],
 };
 
-/* ───────── 식사류 (원산지 테이블) ───────── */
-const MEAL_DATA = [
-  { menu: "쌀밥", qty: "10Kg", serving: "50", origin: "쌀:국내산" },
-  { menu: "사골우거지국", qty: "10Kg", serving: "50", origin: "우육:호주산" },
-  { menu: "육개장", qty: "10Kg", serving: "50", origin: "우육:호주산" },
-  { menu: "북엇국", qty: "10Kg", serving: "50", origin: "북어:국내산, 우육:국내산" },
-  { menu: "소고기무국", qty: "10Kg", serving: "50", origin: "우육:호주산" },
-];
-
-/* ───────── 반찬류 (원산지 테이블) ───────── */
-const SIDE_DATA = [
-  { menu: "편육", qty: "3Kg", serving: "30", origin: "돈육:국내산" },
-  { menu: "수육", qty: "3Kg", serving: "30", origin: "돈육:외국산" },
-  { menu: "가오리무침", qty: "3Kg", serving: "30", origin: "가오리:칠레산" },
-  { menu: "코다리조림", qty: "3Kg", serving: "30", origin: "명태:러시아산" },
-  { menu: "오징어무침", qty: "3Kg", serving: "30", origin: "오징어:칠레산" },
-  { menu: "모둠전", qty: "2Kg", serving: "30", origin: "김치전:베트남산" },
-  { menu: "해파리냉채", qty: "3Kg", serving: "30", origin: "해파리:중국산" },
-  { menu: "소고기파프리카잡채", qty: "2Kg", serving: "30", origin: "우육:호주산" },
-  { menu: "닭가슴살냉채", qty: "2Kg", serving: "30", origin: "계육:브라질산" },
-  { menu: "도토리묵야채무침", qty: "3Kg", serving: "30", origin: "도토리묵:국내산" },
-  { menu: "콩나물해물잡채", qty: "2Kg", serving: "30", origin: "콩나물:국내산" },
-  { menu: "땅콩볶음", qty: "3Kg", serving: "30", origin: "땅콩:국내산" },
-  { menu: "마른반찬", qty: "3Kg", serving: "30", origin: "국내산, 외국산" },
-  { menu: "과일샐러드", qty: "3Kg", serving: "30", origin: "게맛살(명태연육):미국산" },
-  { menu: "멸치마늘종볶음", qty: "3Kg", serving: "30", origin: "멸치:국내산" },
-  { menu: "파리고추멸치볶음", qty: "3Kg", serving: "30", origin: "멸치:국내산" },
-  { menu: "포기김치", qty: "3Kg", serving: "30", origin: "배추:국내산, 고춧가루:중국산" },
-  { menu: "배추겉절이", qty: "3Kg", serving: "30", origin: "배추:국내산" },
-  { menu: "새우젓", qty: "1Kg", serving: "30", origin: "새우:국내산" },
-];
-
-/* ───────── 안주류 (원산지 테이블) ───────── */
-const SNACK_DATA = [
-  { menu: "김치만두전골", basis: "4인기준", origin: "돈육:국내산, 배추:국내산" },
-  { menu: "돼지김치짜글이", basis: "4인기준", origin: "돈육:국내산, 배추:국내산" },
-  { menu: "불고기버섯전골", basis: "4인기준", origin: "우육:호주산, 버섯:국내산" },
-  { menu: "해물모둠전골", basis: "4인기준", origin: "새우:국내산, 오징어:칠레산" },
-];
 
 /* ───────── 메인 컴포넌트 ───────── */
 export default function ShilnakwonPage() {
@@ -171,8 +132,6 @@ export default function ShilnakwonPage() {
     <main className="shil-page">
       {/* ═══════ HERO ═══════ */}
       <header className="hero">
-        <div className="hero-icon">🏛</div>
-        <p className="hero-eng">SHILLAKWON</p>
         <h1 className="hero-title">쉴낙원 안양 장례식장 서비스 안내</h1>
         <p className="hero-sub">마지막 이별의 순간, 가족과 같은 마음으로 함께 하겠습니다.</p>
         <div className="hero-divider" />
@@ -419,65 +378,6 @@ export default function ShilnakwonPage() {
                   </tr>
                 ));
               })}
-            </tbody>
-          </table>
-        </div>
-
-        {/* ── 식사류 ── */}
-        <h3 className="menu-section-label">식사류</h3>
-        <div className="menu-table-wrap">
-          <table className="menu-table">
-            <thead>
-              <tr><th>메뉴</th><th>수량</th><th>인분</th><th>원산지</th></tr>
-            </thead>
-            <tbody>
-              {MEAL_DATA.map((item, i) => (
-                <tr key={i}>
-                  <td className="menu-name">{item.menu}</td>
-                  <td className="menu-unit">{item.qty}</td>
-                  <td className="menu-unit">{item.serving}</td>
-                  <td className="menu-origin">{item.origin}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-
-        {/* ── 반찬류 ── */}
-        <h3 className="menu-section-label">반찬류</h3>
-        <div className="menu-table-wrap">
-          <table className="menu-table">
-            <thead>
-              <tr><th>메뉴</th><th>수량</th><th>인분</th><th>원산지</th></tr>
-            </thead>
-            <tbody>
-              {SIDE_DATA.map((item, i) => (
-                <tr key={i}>
-                  <td className="menu-name">{item.menu}</td>
-                  <td className="menu-unit">{item.qty}</td>
-                  <td className="menu-unit">{item.serving}</td>
-                  <td className="menu-origin">{item.origin}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-
-        {/* ── 안주류 ── */}
-        <h3 className="menu-section-label">안주류</h3>
-        <div className="menu-table-wrap">
-          <table className="menu-table">
-            <thead>
-              <tr><th>메뉴</th><th>기준</th><th>원산지</th></tr>
-            </thead>
-            <tbody>
-              {SNACK_DATA.map((item, i) => (
-                <tr key={i}>
-                  <td className="menu-name">{item.menu}</td>
-                  <td className="menu-unit">{item.basis}</td>
-                  <td className="menu-origin">{item.origin}</td>
-                </tr>
-              ))}
             </tbody>
           </table>
         </div>
