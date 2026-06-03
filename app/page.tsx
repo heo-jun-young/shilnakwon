@@ -63,7 +63,7 @@ const PRICE_TABLE: PriceGroup[] = [
     note: "• 주문단위 : 메뉴별 상이\n• 소요시간 : 1시간 이내\n• 주문시간 : 07 ~ 21시",
     cats: [
       { name: "전·튀김류", items: [
-        { menu: "모듬전",             unit: "3kg", price: "[3종] 105,000원 [5종] 140,000원" },
+        { menu: "모듬전",             unit: "3kg", price: "[3종] 105,000원\n[5종] 140,000원" },
         { menu: "모듬튀김",           unit: "3kg", price: "120,000원" },
         { menu: "[반반] 모듬전&튀김", unit: "4kg", price: "145,000원" },
       ]},
@@ -426,7 +426,13 @@ export default function ShilnakwonPage() {
                         )}
                         <td className="menu-name">{item.menu}</td>
                         <td className="menu-unit">{item.unit}</td>
-                        <td className="menu-price">{item.price}</td>
+                        <td className="menu-price">
+                          {item.price.includes("\n")
+                            ? item.price.split("\n").map((p, pi) => (
+                                <span key={pi} style={{ whiteSpace: "nowrap", display: "block" }}>{p}</span>
+                              ))
+                            : item.price}
+                        </td>
                         {firstInGroup && (
                           <td className="menu-note" rowSpan={totalRows}>
                             {group.note.split("\n").map((line, li) => (
