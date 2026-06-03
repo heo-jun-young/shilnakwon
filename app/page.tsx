@@ -401,20 +401,16 @@ export default function ShilnakwonPage() {
 
         <div className="allergy-grid">
           {[
-            { icon: "/icons/wheat.png", name: "밀", items: "모듬전, 모듬튀김, 닭강정, 탕수육, 케잌류" },
-            { icon: "/icons/egg.png", name: "알류", items: "모듬전, 모듬튀김, 샐러드류, 닭강정, 탕수육, 케잌류" },
-            { icon: "/icons/crab.png", name: "갑각류(게, 새우)", items: "해산물냉채, 새우젓" },
-            { icon: "/icons/soy.png", name: "대두", items: "대부분의 메뉴가 간장이 사용됩니다로 대두 알레르기 보유 고객께서는 주문 전 직원에게 알려주시길 부탁드립니다." },
-            { icon: "/icons/milk.png", name: "우유", items: "케잌류" },
+            { emoji: "🌾", name: "밀", items: "모듬전, 모듬튀김, 닭강정, 탕수육, 케잌류" },
+            { emoji: "🥚", name: "알류", items: "모듬전, 모듬튀김, 샐러드류, 닭강정, 탕수육, 케잌류" },
+            { emoji: "🦀", name: "갑각류(게, 새우)", items: "해산물냉채, 새우젓" },
+            { emoji: "🫘", name: "대두", items: "대부분의 메뉴가 간장이 사용됩니다로 대두 알레르기 보유 고객께서는 주문 전 직원에게 알려주시길 부탁드립니다." },
+            { emoji: "🥛", name: "우유", items: "케잌류" },
           ].map((a, i) => (
             <div key={i} className="allergy-card">
-              <div className="allergy-icon-wrap">
-                <Image src={a.icon} alt={a.name} width={60} height={60} unoptimized />
-              </div>
-              <div>
-                <strong className="allergy-name">{a.name}</strong>
-                <p className="allergy-items">{a.items}</p>
-              </div>
+              <span className="allergy-emoji">{a.emoji}</span>
+              <strong className="allergy-name">{a.name}</strong>
+              <p className="allergy-items">{a.items}</p>
             </div>
           ))}
         </div>

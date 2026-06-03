@@ -33,6 +33,7 @@ body {
   font-family: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
   background: var(--bg-cream);
   color: var(--text-dark);
+  font-size: 15px;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
 }
@@ -274,33 +275,15 @@ body {
 }
 .allergy-card {
   display: flex;
-  align-items: flex-start;
-  gap: 12px;
+  flex-direction: column;
   background: var(--white);
   border: 1px solid var(--border-lighter);
   border-radius: 12px;
-  padding: 16px;
+  padding: 20px;
 }
-.allergy-icon-wrap {
-  width: 60px;
-  height: 60px;
-  flex-shrink: 0;
-  border-radius: 50%;
-  overflow: hidden;
-  background: #4a4a4a;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.allergy-icon-wrap img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  transform: scale(1.5);
-  transform-origin: center center;
-}
-.allergy-name { font-size: 16px; font-weight: 700; color: var(--text-dark); display: block; margin-bottom: 4px; }
-.allergy-items { font-size: 14px; color: var(--text-body); line-height: 1.6; }
+.allergy-emoji { font-size: 40px; display: block; margin-bottom: 8px; line-height: 1; }
+.allergy-name { font-size: 15px; font-weight: 700; color: var(--text-dark); display: block; margin-bottom: 4px; }
+.allergy-items { font-size: 13px; color: var(--text-body); line-height: 1.6; }
 .allergy-warning {
   background: #fff8e1;
   border: 1px solid #f0e0a0;
