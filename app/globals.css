@@ -65,7 +65,7 @@ body {
   flex: 1;
   padding: 14px 8px;
   font-size: 14px;
-  color: #ffffff;
+  color: rgba(0,0,0,0.45);
   background: transparent;
   border: none;
   cursor: pointer;
@@ -74,8 +74,8 @@ body {
   font-family: inherit;
   letter-spacing: 0.5px;
 }
-.tab-btn:hover { color: var(--white); background: rgba(255,255,255,0.05); }
-.tab-btn.active { color: var(--gold-light); border-bottom: 2px solid var(--gold); font-weight: 600; }
+.tab-btn:hover { color: rgba(0,0,0,0.7); background: rgba(255,255,255,0.05); }
+.tab-btn.active { color: var(--white); border-bottom: 2px solid var(--gold); font-weight: 600; }
 
 /* ═══════ CONTENT ═══════ */
 .content-section { max-width: 800px; margin: 0 auto; padding: 50px 24px 80px; }

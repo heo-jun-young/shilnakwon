@@ -281,7 +281,7 @@ export default function ShilnakwonPage() {
         <div className="method-list">
           {[
             { icon: "/icons/incense-1.png", num: "01.", text: "오른손으로 향 1개나 3개를 집은 뒤, 촛불로 불을 붙인다.", note: "* 단, 이미 향로에 향이 많은 경우, 1개만 피우는 것이 좋다." },
-            { icon: "/icons/incense-2.png", num: "02.", text: "불은 왼손으로 가볍게 부채질하거나 흔들어 끈다.\n절대 입으로 불어 꺼서는 안된다.", note: "" },
+            { icon: "/icons/incense-2.png", num: "02.", text: "불은 왼손으로 가볍게 부채질하거나\n흔들어 끈다.\n절대 입으로 불어 꺼서는 안된다.", note: "" },
             { icon: "/icons/incense-3.png", num: "03.", text: "향을 집은 오른손을 왼손으로 받치고 공손히 향로에 꽂는다.", note: "* 향을 여러개 꽂을 경우, 반드시 하나씩 꽂는다." },
           ].map((item, i) => (
             <div key={i} className="method-item">
@@ -321,7 +321,7 @@ export default function ShilnakwonPage() {
         <div className="divider" />
         <ol className="numbered-list">
           <li><span className="num">01</span>분향 혹은 헌화 후, 일어나 두 번 절을 한다. 종교적 이유로 절하는 것이 어려우면, 묵념/기도를 올려도 무방하다.</li>
-          <li><span className="num">02</span><span>절을 두 번 올리는 의미: 한 번 — 천신에게 잘 받아달라는 의미<br />/ 두 번 — 지신에게 잘 떠나게 해달라는 의미</span></li>
+          <li><span className="num">02</span><span>절을 두 번 올리는 의미:<br />한 번 — 천신에게 잘 받아달라는 의미<br />두 번 — 지신에게 잘 떠나게 해달라는 의미</span></li>
         </ol>
 
         {/* ── 조문 ── */}
