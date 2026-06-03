@@ -160,17 +160,10 @@ body {
   border-radius: 50%;
   overflow: hidden;
   flex-shrink: 0;
-  background: #4a4a4a;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.method-icon-wrap img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  transform: scale(1.5);
-  transform-origin: center center;
+  background-size: 270%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: #4a4a4a;
 }
 .method-content { flex: 1; }
 .method-num { font-size: 15px; font-weight: 700; color: var(--gold); display: block; margin-bottom: 4px; }

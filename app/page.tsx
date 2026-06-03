@@ -242,9 +242,7 @@ export default function ShilnakwonPage() {
             { icon: "/icons/incense-3.png", num: "03.", text: "향을 집은 오른손을 왼손으로 받치고 곧손히 향로에 꽂는다.", note: "* 향을 여러개 꽂을 경우, 반드시 하나씩 꽂는다." },
           ].map((item, i) => (
             <div key={i} className="method-item">
-              <div className="method-icon-wrap">
-                <Image src={item.icon} alt="" width={120} height={120} unoptimized />
-              </div>
+              <div className="method-icon-wrap" style={{ backgroundImage: `url('${item.icon}')` }} />
               <div className="method-content">
                 <span className="method-num">{item.num}</span>
                 {item.text.split("\n").map((line, li) => <p key={li}>{line}</p>)}
@@ -262,9 +260,7 @@ export default function ShilnakwonPage() {
             { icon: "/icons/flower-2.png", num: "02.", text: "꽃봉오리가 영전을 향하도록 올린다." },
           ].map((item, i) => (
             <div key={i} className="method-item">
-              <div className="method-icon-wrap">
-                <Image src={item.icon} alt="" width={120} height={120} unoptimized />
-              </div>
+              <div className="method-icon-wrap" style={{ backgroundImage: `url('${item.icon}')` }} />
               <div className="method-content">
                 <span className="method-num">{item.num}</span>
                 <p>{item.text}</p>
