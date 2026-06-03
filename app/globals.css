@@ -93,9 +93,9 @@ body {
   gap: 14px;
   padding: 12px 0;
   border-bottom: 1px dotted var(--border-lighter);
-  font-size: 15px;
+  font-size: 13px;
   color: var(--text-body);
-  line-height: 1.7;
+  line-height: 1.55;
 }
 .num {
   display: inline-flex;
@@ -264,31 +264,31 @@ tr.note-sep-row > td { border-top: 2px solid var(--border-light) !important; }
 /* ═══════ ALLERGY ═══════ */
 .allergy-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-auto-rows: 1fr;
-  align-items: stretch;
-  gap: 10px;
+  grid-template-columns: 1fr;
+  gap: 12px;
   margin-bottom: 24px;
 }
 .allergy-card {
   display: flex;
-  flex-direction: column;
-  height: 100%;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
   background: var(--white);
   border: 1px solid var(--border-lighter);
   border-radius: 12px;
-  padding: 20px;
+  padding: 18px 20px;
   box-sizing: border-box;
 }
 .allergy-icon {
-  width: 52px;
-  height: 52px;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   background-color: transparent;
-  margin-bottom: 10px;
 }
+.allergy-text { flex: 1; }
 .allergy-name { font-size: 14px; font-weight: 700; color: var(--text-dark); display: block; margin-bottom: 4px; }
 .allergy-items { font-size: 12px; color: var(--text-body); line-height: 1.6; }
 .allergy-warning {
@@ -413,9 +413,6 @@ tr.note-sep-row > td { border-top: 2px solid var(--border-light) !important; }
   .menu-note { font-size: 9px !important; max-width: none; line-height: 1.4; word-break: keep-all; }
   .menu-unit, .menu-price { white-space: normal; }
   .menu-origin { font-size: 10px; word-break: keep-all; }
-  .allergy-grid { grid-template-columns: repeat(5, 1fr); grid-auto-rows: 1fr; gap: 6px; }
-  .allergy-card { padding: 10px 6px; }
-  .allergy-icon { width: 40px; height: 40px; margin-bottom: 6px; }
-  .allergy-name { font-size: 11px; }
-  .allergy-items { font-size: 9px; line-height: 1.4; }
+  .allergy-card { padding: 14px 16px; gap: 12px; }
+  .allergy-icon { width: 40px; height: 40px; }
 }

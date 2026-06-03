@@ -467,8 +467,10 @@ export default function ShilnakwonPage() {
           ].map((a, i) => (
             <div key={i} className="allergy-card">
               <div className="allergy-icon" style={{ backgroundImage: `url('${a.icon}')` }} />
-              <strong className="allergy-name">{a.name}</strong>
-              <p className="allergy-items">{a.items}</p>
+              <div className="allergy-text">
+                <strong className="allergy-name">{a.name}</strong>
+                <p className="allergy-items">{a.items}</p>
+              </div>
             </div>
           ))}
         </div>
