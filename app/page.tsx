@@ -30,20 +30,15 @@ type PriceGroup = { note: string; cats: PriceCat[]; sepBefore?: boolean };
 
 const PRICE_TABLE: PriceGroup[] = [
   {
-    note: "• 주문단위 : 30인 / 50인\n• 소요시간 : 1시간 이내\n• 주문시간 : 07 ~ 21시",
+    note: "• 주문단위 : 30인 / 50인\n• 소요시간 : 1시간 이내\n• 주문시간 : 07 ~ 21시\n\n※ 전주 홍어탕 50인\n275,000원 추가 판매",
     cats: [
       { name: "매운국", items: [
         { menu: "뭉근한 육개장", unit: "50인", price: "240,000원" },
         { menu: "육개장",        unit: "50인", price: "175,000원" },
         { menu: "사골우거지국",  unit: "50인", price: "175,000원" },
       ]},
-    ],
-  },
-  {
-    note: "※ 전주 홍어탕 50인\n275,000원 추가 판매",
-    cats: [
       { name: "맑은국", items: [
-        { menu: "돼지금골탕",  unit: "50인", price: "175,000원" },
+        { menu: "돼지곰탕",    unit: "50인", price: "175,000원" },
         { menu: "황태해장국",  unit: "50인", price: "175,000원" },
         { menu: "소고기무국",  unit: "50인", price: "175,000원" },
         { menu: "근대재첩국",  unit: "50인", price: "175,000원" },
@@ -68,7 +63,7 @@ const PRICE_TABLE: PriceGroup[] = [
     note: "• 주문단위 : 메뉴별 상이\n• 소요시간 : 1시간 이내\n• 주문시간 : 07 ~ 21시",
     cats: [
       { name: "전·튀김류", items: [
-        { menu: "모듬전",             unit: "3kg", price: "[3종] 105,000원 / [5종] 140,000원" },
+        { menu: "모듬전",             unit: "3kg", price: "[3종] 105,000원 [5종] 140,000원" },
         { menu: "모듬튀김",           unit: "3kg", price: "120,000원" },
         { menu: "[반반] 모듬전&튀김", unit: "4kg", price: "145,000원" },
       ]},
@@ -86,7 +81,7 @@ const PRICE_TABLE: PriceGroup[] = [
         { menu: "코다리조림",   unit: "5kg", price: "190,000원" },
       ]},
       { name: "반찬류", items: [
-        { menu: "멸치건과류볶음", unit: "2kg", price: "85,000원" },
+        { menu: "멸치견과류볶음", unit: "2kg", price: "85,000원" },
         { menu: "포기김치",      unit: "4kg", price: "65,000원" },
         { menu: "명이나물",      unit: "1kg", price: "30,000원" },
         { menu: "간장고추절임",  unit: "1kg", price: "20,000원" },
@@ -287,7 +282,7 @@ export default function ShilnakwonPage() {
           {[
             { icon: "/icons/incense-1.png", num: "01.", text: "오른손으로 향 1개나 3개를 집은 뒤, 촛불로 불을 붙인다.", note: "* 단, 이미 향로에 향이 많은 경우, 1개만 피우는 것이 좋다." },
             { icon: "/icons/incense-2.png", num: "02.", text: "불은 왼손으로 가볍게 부채질하거나 흔들어 끈다.\n절대 입으로 불어 꺼서는 안된다.", note: "" },
-            { icon: "/icons/incense-3.png", num: "03.", text: "향을 집은 오른손을 왼손으로 받치고 곧손히 향로에 꽂는다.", note: "* 향을 여러개 꽂을 경우, 반드시 하나씩 꽂는다." },
+            { icon: "/icons/incense-3.png", num: "03.", text: "향을 집은 오른손을 왼손으로 받치고 공손히 향로에 꽂는다.", note: "* 향을 여러개 꽂을 경우, 반드시 하나씩 꽂는다." },
           ].map((item, i) => (
             <div key={i} className="method-item">
               <div className="method-icon-wrap">
@@ -448,7 +443,12 @@ export default function ShilnakwonPage() {
           </table>
         </div>
 
-        <p className="menu-notice">※ 메뉴는 당일 식재료 수급에 따라 변동될 수 있습니다.</p>
+        <p className="menu-notice">※ 메뉴는 식재료 수급에 따라 변동될 수 있습니다.</p>
+
+        <div className="menu-set-images">
+          <Image src="/icons/menu-set-1.png" alt="세트구성 1" width={800} height={400} unoptimized style={{ width: "100%", height: "auto", borderRadius: "8px", display: "block" }} />
+          <Image src="/icons/menu-set-2.png" alt="세트구성 2" width={800} height={400} unoptimized style={{ width: "100%", height: "auto", borderRadius: "8px", display: "block" }} />
+        </div>
       </section>
 
       <div className="section-sep" />
