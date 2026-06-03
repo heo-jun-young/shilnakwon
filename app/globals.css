@@ -6,8 +6,8 @@
    ═══════════════════════════════════════ */
 
 :root {
-  --bg-cream: #f5f0e8;
-  --bg-cream-light: #faf7f2;
+  --bg-cream: #ffffff;
+  --bg-cream-light: #f7f7f7;
   --text-dark: #2c2c2c;
   --text-body: #4a4a4a;
   --text-muted: #888;
@@ -19,10 +19,10 @@
   --hero-gradient-top: #2a2218;
   --hero-gradient-bottom: #0d0d0d;
   --card-dark: #2a2a2a;
-  --border-light: #d4c9b8;
-  --border-lighter: #e5ddd0;
+  --border-light: #e0e0e0;
+  --border-lighter: #eeeeee;
   --white: #fff;
-  --warning-bg: #f9f5ef;
+  --warning-bg: #fffbf0;
   --table-header: #009FDE;
 }
 
@@ -186,7 +186,7 @@ body {
 
 /* ═══════ FAQ ═══════ */
 .faq-list { display: flex; flex-direction: column; gap: 12px; }
-.faq-item { border: 1px solid var(--border-lighter); border-radius: 8px; overflow: hidden; }
+.faq-item { border: 1px solid #e8e8e8; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
 .faq-question {
   width: 100%;
   display: flex;
@@ -274,10 +274,11 @@ tr.note-sep-row > td { border-top: 2px solid var(--border-light) !important; }
   align-items: center;
   gap: 16px;
   background: var(--white);
-  border: 1px solid var(--border-lighter);
+  border: 1px solid #e8e8e8;
   border-radius: 12px;
   padding: 18px 20px;
   box-sizing: border-box;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.07);
 }
 .allergy-icon {
   width: 48px;
