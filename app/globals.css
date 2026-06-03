@@ -160,7 +160,7 @@ body {
   border-radius: 50%;
   overflow: hidden;
   flex-shrink: 0;
-  background-size: 270%;
+  background-size: 350%;
   background-position: center center;
   background-repeat: no-repeat;
   background-color: #4a4a4a;
@@ -261,7 +261,7 @@ body {
 /* ═══════ ALLERGY ═══════ */
 .allergy-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   align-items: start;
   gap: 12px;
   margin-bottom: 24px;
@@ -273,10 +273,22 @@ body {
   border: 1px solid var(--border-lighter);
   border-radius: 12px;
   padding: 20px;
+  min-height: 140px;
 }
-.allergy-emoji { font-size: 40px; display: block; margin-bottom: 8px; line-height: 1; }
-.allergy-name { font-size: 15px; font-weight: 700; color: var(--text-dark); display: block; margin-bottom: 4px; }
-.allergy-items { font-size: 13px; color: var(--text-body); line-height: 1.6; }
+.allergy-icon {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  background-size: 350%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: #4a4a4a;
+  margin-bottom: 10px;
+}
+.allergy-name { font-size: 14px; font-weight: 700; color: var(--text-dark); display: block; margin-bottom: 4px; }
+.allergy-items { font-size: 12px; color: var(--text-body); line-height: 1.6; }
 .allergy-warning {
   background: #fff8e1;
   border: 1px solid #f0e0a0;
