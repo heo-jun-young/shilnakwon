@@ -155,15 +155,17 @@ body {
   border-bottom: 1px solid var(--border-lighter);
 }
 .method-icon-wrap {
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  overflow: hidden;
+  width: 80px;
+  height: 80px;
   flex-shrink: 0;
-  background-size: 350%;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-color: #4a4a4a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.method-icon-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 .method-content { flex: 1; }
 .method-num { font-size: 15px; font-weight: 700; color: var(--gold); display: block; margin-bottom: 4px; }
@@ -261,7 +263,7 @@ body {
 /* ═══════ ALLERGY ═══════ */
 .allergy-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   align-items: start;
   gap: 12px;
   margin-bottom: 24px;
@@ -273,18 +275,14 @@ body {
   border: 1px solid var(--border-lighter);
   border-radius: 12px;
   padding: 20px;
-  min-height: 140px;
 }
 .allergy-icon {
-  width: 55px;
-  height: 55px;
-  border-radius: 50%;
-  overflow: hidden;
-  flex-shrink: 0;
-  background-size: 350%;
-  background-position: center center;
+  width: 64px;
+  height: 64px;
+  background-size: contain;
+  background-position: center;
   background-repeat: no-repeat;
-  background-color: #4a4a4a;
+  background-color: transparent;
   margin-bottom: 10px;
 }
 .allergy-name { font-size: 14px; font-weight: 700; color: var(--text-dark); display: block; margin-bottom: 4px; }

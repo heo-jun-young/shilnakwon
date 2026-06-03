@@ -242,7 +242,9 @@ export default function ShilnakwonPage() {
             { icon: "/icons/incense-3.png", num: "03.", text: "향을 집은 오른손을 왼손으로 받치고 곧손히 향로에 꽂는다.", note: "* 향을 여러개 꽂을 경우, 반드시 하나씩 꽂는다." },
           ].map((item, i) => (
             <div key={i} className="method-item">
-              <div className="method-icon-wrap" style={{ backgroundImage: `url('${item.icon}')` }} />
+              <div className="method-icon-wrap">
+                <Image src={item.icon} alt="" width={80} height={80} unoptimized />
+              </div>
               <div className="method-content">
                 <span className="method-num">{item.num}</span>
                 {item.text.split("\n").map((line, li) => <p key={li}>{line}</p>)}
@@ -260,7 +262,9 @@ export default function ShilnakwonPage() {
             { icon: "/icons/flower-2.png", num: "02.", text: "꽃봉오리가 영전을 향하도록 올린다." },
           ].map((item, i) => (
             <div key={i} className="method-item">
-              <div className="method-icon-wrap" style={{ backgroundImage: `url('${item.icon}')` }} />
+              <div className="method-icon-wrap">
+                <Image src={item.icon} alt="" width={80} height={80} unoptimized />
+              </div>
               <div className="method-content">
                 <span className="method-num">{item.num}</span>
                 <p>{item.text}</p>
@@ -397,11 +401,11 @@ export default function ShilnakwonPage() {
 
         <div className="allergy-grid">
           {[
-            { icon: "/icons/wheat.png", name: "밀 (글루텐)", items: "모듬전, 튀김류, 일부 소스" },
-            { icon: "/icons/egg.png", name: "계란", items: "모듬전, 계란찜, 샐러드" },
-            { icon: "/icons/crab.png", name: "갑각류", items: "꽃맛살, 새우류 포함 반찬" },
-            { icon: "/icons/soy.png", name: "대두", items: "된장찌개, 간장 포함 조림류" },
-            { icon: "/icons/milk.png", name: "유제품", items: "일부 크림 소스·디저트류" },
+            { icon: "/icons/wheat.png", name: "밀", items: "모듬전, 모듬튀김, 닭강정, 탕수육, 케잌류" },
+            { icon: "/icons/egg.png", name: "알류", items: "모듬전, 모듬튀김, 샐러드류, 닭강정, 탕수육, 케잌류" },
+            { icon: "/icons/crab.png", name: "갑각류(게, 새우)", items: "해산물냉채, 새우젓" },
+            { icon: "/icons/soy.png", name: "대두", items: "대부분의 메뉴가 간장이 사용됩니다로 대두 알레르기 보유 고객께서는 주문 전 직원에게 알려주시길 부탁드립니다." },
+            { icon: "/icons/milk.png", name: "우유", items: "케잌류" },
           ].map((a, i) => (
             <div key={i} className="allergy-card">
               <div className="allergy-icon" style={{ backgroundImage: `url('${a.icon}')` }} />
