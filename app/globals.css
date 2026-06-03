@@ -33,7 +33,7 @@ body {
   font-family: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
   background: var(--bg-cream);
   color: var(--text-dark);
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
 }
@@ -256,17 +256,18 @@ body {
 .menu-category { width: 60px; font-weight: 700; text-align: center; background: var(--bg-cream-light); white-space: nowrap; vertical-align: middle !important; }
 .menu-name { font-weight: 600; color: var(--text-dark) !important; white-space: nowrap; }
 .menu-unit, .menu-price { text-align: center; white-space: nowrap; }
-.menu-note { font-size: 11px !important; color: var(--text-muted) !important; line-height: 1.5; max-width: 180px; word-break: keep-all; }
+.menu-note { font-size: 11px !important; color: var(--text-muted) !important; line-height: 1.5; max-width: 180px; word-break: keep-all; vertical-align: middle !important; text-align: center; }
+tr.note-sep-row > td { border-top: 2px solid var(--border-light) !important; }
 .menu-origin { font-size: 12px; color: var(--text-body); line-height: 1.6; }
 .menu-notice { font-size: 13px; color: var(--text-muted); margin-top: 20px; }
 
 /* ═══════ ALLERGY ═══════ */
 .allergy-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   grid-auto-rows: 1fr;
   align-items: stretch;
-  gap: 14px;
+  gap: 10px;
   margin-bottom: 24px;
 }
 .allergy-card {
@@ -412,5 +413,9 @@ body {
   .menu-note { font-size: 9px !important; max-width: none; line-height: 1.4; word-break: keep-all; }
   .menu-unit, .menu-price { white-space: normal; }
   .menu-origin { font-size: 10px; word-break: keep-all; }
-  .allergy-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 1fr; }
+  .allergy-grid { grid-template-columns: repeat(5, 1fr); grid-auto-rows: 1fr; gap: 6px; }
+  .allergy-card { padding: 10px 6px; }
+  .allergy-icon { width: 40px; height: 40px; margin-bottom: 6px; }
+  .allergy-name { font-size: 11px; }
+  .allergy-items { font-size: 9px; line-height: 1.4; }
 }

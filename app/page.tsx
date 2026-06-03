@@ -23,76 +23,123 @@ const FAQ_DATA = [
   { q: "대중교통 이용은 어떻게 하나요?", a: "버스 및 지하철 이용 시 장례식장 인근 정류장과 역에서 도보로 이동 가능하며, 자세한 노선은 1층 안내 데스크 또는 원내 교통 안내문을 참고해 주시기 바랍니다." },
 ];
 
-/* ───────── 메뉴 데이터 (가격표) ───────── */
-const MENU_DATA: Record<string, { menu: string; unit: string; price: string; note?: string }[]> = {
-  매운국: [
-    { menu: "뭉근한 육개장", unit: "50인", price: "240,000원" },
-    { menu: "육개장", unit: "50인", price: "175,000원" },
-    { menu: "사골우거지국", unit: "50인", price: "175,000원", note: "• 주문단위 : 30인 / 50인\n• 소요시간 : 1시간 이내\n• 주문시간 : 07 ~ 21시" },
-  ],
-  맑은국: [
-    { menu: "돼지금골탕", unit: "50인", price: "175,000원" },
-    { menu: "황태해장국", unit: "50인", price: "175,000원" },
-    { menu: "소고기무국", unit: "50인", price: "175,000원" },
-    { menu: "근대재첩국", unit: "50인", price: "175,000원", note: "※ 전주 홍어탕 50인\n275,000원 추가 판매" },
-  ],
-  밥류: [
-    { menu: "잡곡밥", unit: "50인", price: "75,000원" },
-    { menu: "쌀밥", unit: "50인", price: "60,000원" },
-  ],
-  고기류: [
-    { menu: "삼겹수육", unit: "3kg", price: "175,000원", note: "• 주문단위 : 3kg / 4kg\n• 소요시간 : 1시간 이내\n• 주문시간 : 07 ~ 21시" },
-    { menu: "편육", unit: "3kg", price: "120,000원" },
-    { menu: "[반반] 수육&편육", unit: "4kg", price: "185,000원" },
-  ],
-  "전·튀김류": [
-    { menu: "모듬전", unit: "3kg", price: "[3종] 105,000원 / [5종] 140,000원" },
-    { menu: "모듬튀김", unit: "3kg", price: "120,000원" },
-    { menu: "[반반] 모듬전&튀김", unit: "4kg", price: "145,000원" },
-  ],
-  무침류: [
-    { menu: "삼채명태회무침", unit: "5kg", price: "180,000원" },
-    { menu: "홍어무침", unit: "5kg", price: "180,000원" },
-  ],
-  냉채류: [
-    { menu: "해산물냉채", unit: "3kg", price: "105,000원", note: "• 주문단위 : 메뉴별 상이\n• 소요시간 : 1시간 이내\n• 주문시간 : 07 ~ 21시" },
-    { menu: "해파리냉채", unit: "3kg", price: "90,000원" },
-  ],
-  샐러드류: [
-    { menu: "꽃맛살샐러드", unit: "3kg", price: "90,000원" },
-    { menu: "단호박샐러드", unit: "3kg", price: "90,000원" },
-    { menu: "코다리조림", unit: "5kg", price: "190,000원" },
-  ],
-  반찬류: [
-    { menu: "멸치건과류볶음", unit: "2kg", price: "85,000원" },
-    { menu: "포기김치", unit: "4kg", price: "65,000원" },
-    { menu: "명이나물", unit: "1kg", price: "30,000원" },
-    { menu: "간장고추절임", unit: "1kg", price: "20,000원" },
-  ],
-  소스류: [
-    { menu: "새우젓", unit: "1kg", price: "15,000원" },
-    { menu: "겨자소스", unit: "1kg", price: "10,000원" },
-  ],
-  안주류: [
-    { menu: "소불고기", unit: "3kg", price: "180,000원", note: "• 주문단위 : 메뉴별 상이\n• 소요시간 : 메뉴별 상이\n• 주문시간 : 15 ~ 21시" },
-    { menu: "닭강정", unit: "3kg", price: "130,000원" },
-    { menu: "탕수육", unit: "3kg", price: "130,000원" },
-    { menu: "먹태구이", unit: "500g", price: "30,000원" },
-    { menu: "감자튀김", unit: "2kg", price: "20,000원" },
-  ],
-  디저트류: [
-    { menu: "절편", unit: "4kg", price: "45,000원", note: "• 주문단위 : 4kg / 8kg\n• 소요시간 :\n  주문 후 약 3~4시간 소요\n• 주문마감 : 8시, 12시, 16시\n\n• 소요시간 : 1시간 이내\n• 주문시간 : 07 ~ 21시" },
-    { menu: "꿀떡", unit: "4kg", price: "55,000원" },
-    { menu: "인절미", unit: "4kg", price: "60,000원" },
-    { menu: "영양찰떡", unit: "4kg", price: "85,000원" },
-    { menu: "[개별포장] 두텁떡", unit: "4kg", price: "85,000원" },
-    { menu: "[개별포장] 앙꼬절편", unit: "4kg", price: "55,000원" },
-    { menu: "조각 케이크", unit: "56pc", price: "45,000원" },
-  ],
-  과일류: [
-    { menu: "방울토마토, 수박 등", unit: "–", price: "시세 적용" },
-  ],
-};
+/* ───────── 가격표 데이터 (비고 그룹 단위) ───────── */
+type PriceItem = { menu: string; unit: string; price: string };
+type PriceCat  = { name: string; items: PriceItem[] };
+type PriceGroup = { note: string; cats: PriceCat[]; sepBefore?: boolean };
+
+const PRICE_TABLE: PriceGroup[] = [
+  {
+    note: "• 주문단위 : 30인 / 50인\n• 소요시간 : 1시간 이내\n• 주문시간 : 07 ~ 21시",
+    cats: [
+      { name: "매운국", items: [
+        { menu: "뭉근한 육개장", unit: "50인", price: "240,000원" },
+        { menu: "육개장",        unit: "50인", price: "175,000원" },
+        { menu: "사골우거지국",  unit: "50인", price: "175,000원" },
+      ]},
+    ],
+  },
+  {
+    note: "※ 전주 홍어탕 50인\n275,000원 추가 판매",
+    cats: [
+      { name: "맑은국", items: [
+        { menu: "돼지금골탕",  unit: "50인", price: "175,000원" },
+        { menu: "황태해장국",  unit: "50인", price: "175,000원" },
+        { menu: "소고기무국",  unit: "50인", price: "175,000원" },
+        { menu: "근대재첩국",  unit: "50인", price: "175,000원" },
+      ]},
+      { name: "밥류", items: [
+        { menu: "잡곡밥", unit: "50인", price: "75,000원" },
+        { menu: "쌀밥",   unit: "50인", price: "60,000원" },
+      ]},
+    ],
+  },
+  {
+    note: "• 주문단위 : 3kg / 4kg\n• 소요시간 : 1시간 이내\n• 주문시간 : 07 ~ 21시",
+    cats: [
+      { name: "고기류", items: [
+        { menu: "삼겹수육",       unit: "3kg", price: "175,000원" },
+        { menu: "편육",           unit: "3kg", price: "120,000원" },
+        { menu: "[반반] 수육&편육", unit: "4kg", price: "185,000원" },
+      ]},
+    ],
+  },
+  {
+    note: "• 주문단위 : 메뉴별 상이\n• 소요시간 : 1시간 이내\n• 주문시간 : 07 ~ 21시",
+    cats: [
+      { name: "전·튀김류", items: [
+        { menu: "모듬전",             unit: "3kg", price: "[3종] 105,000원 / [5종] 140,000원" },
+        { menu: "모듬튀김",           unit: "3kg", price: "120,000원" },
+        { menu: "[반반] 모듬전&튀김", unit: "4kg", price: "145,000원" },
+      ]},
+      { name: "무침류", items: [
+        { menu: "삼채명태회무침", unit: "5kg", price: "180,000원" },
+        { menu: "홍어무침",      unit: "5kg", price: "180,000원" },
+      ]},
+      { name: "냉채류", items: [
+        { menu: "해산물냉채", unit: "3kg", price: "105,000원" },
+        { menu: "해파리냉채", unit: "3kg", price: "90,000원" },
+      ]},
+      { name: "샐러드류", items: [
+        { menu: "꽃맛살샐러드", unit: "3kg", price: "90,000원" },
+        { menu: "단호박샐러드", unit: "3kg", price: "90,000원" },
+        { menu: "코다리조림",   unit: "5kg", price: "190,000원" },
+      ]},
+      { name: "반찬류", items: [
+        { menu: "멸치건과류볶음", unit: "2kg", price: "85,000원" },
+        { menu: "포기김치",      unit: "4kg", price: "65,000원" },
+        { menu: "명이나물",      unit: "1kg", price: "30,000원" },
+        { menu: "간장고추절임",  unit: "1kg", price: "20,000원" },
+      ]},
+      { name: "소스류", items: [
+        { menu: "새우젓",   unit: "1kg", price: "15,000원" },
+        { menu: "겨자소스", unit: "1kg", price: "10,000원" },
+      ]},
+    ],
+  },
+  {
+    note: "• 주문단위 : 메뉴별 상이\n• 소요시간 : 메뉴별 상이\n• 주문시간 : 15 ~ 21시",
+    cats: [
+      { name: "안주류", items: [
+        { menu: "소불고기", unit: "3kg",  price: "180,000원" },
+        { menu: "닭강정",   unit: "3kg",  price: "130,000원" },
+        { menu: "탕수육",   unit: "3kg",  price: "130,000원" },
+        { menu: "먹태구이", unit: "500g", price: "30,000원" },
+        { menu: "감자튀김", unit: "2kg",  price: "20,000원" },
+      ]},
+    ],
+  },
+  {
+    note: "• 주문단위 : 4kg / 8kg\n• 소요시간 : 주문 후 약 3~4시간 소요\n• 주문마감 : 8시, 12시, 16시",
+    cats: [
+      { name: "디저트류", items: [
+        { menu: "절편",     unit: "4kg", price: "45,000원" },
+        { menu: "꿀떡",     unit: "4kg", price: "55,000원" },
+        { menu: "인절미",   unit: "4kg", price: "60,000원" },
+        { menu: "영양찰떡", unit: "4kg", price: "85,000원" },
+      ]},
+    ],
+  },
+  {
+    note: "• 소요시간 : 1시간 이내\n• 주문시간 : 07 ~ 21시",
+    sepBefore: true,
+    cats: [
+      { name: "디저트류", items: [
+        { menu: "[개별포장] 두텁떡",  unit: "4kg",  price: "85,000원" },
+        { menu: "[개별포장] 앙꼬절편", unit: "4kg",  price: "55,000원" },
+        { menu: "조각 케이크",        unit: "56pc", price: "45,000원" },
+      ]},
+    ],
+  },
+  {
+    note: "",
+    cats: [
+      { name: "과일류", items: [
+        { menu: "방울토마토, 수박 등", unit: "–", price: "시세 적용" },
+      ]},
+    ],
+  },
+];
 
 
 /* ───────── 메인 컴포넌트 ───────── */
@@ -363,27 +410,38 @@ export default function ShilnakwonPage() {
               </tr>
             </thead>
             <tbody>
-              {Object.entries(MENU_DATA).map(([category, items]) => {
-                const noteItem = items.find((it) => it.note);
-                return items.map((item, idx) => (
-                  <tr key={`${category}-${idx}`}>
-                    {idx === 0 && (
-                      <td className="menu-category" rowSpan={items.length}>
-                        <strong>{category}</strong>
-                      </td>
-                    )}
-                    <td className="menu-name">{item.menu}</td>
-                    <td className="menu-unit">{item.unit}</td>
-                    <td className="menu-price">{item.price}</td>
-                    {idx === 0 && (
-                      <td className="menu-note" rowSpan={items.length}>
-                        {noteItem?.note?.split("\n").map((line, li) => (
-                          <span key={li}>{line}<br /></span>
-                        ))}
-                      </td>
-                    )}
-                  </tr>
-                ));
+              {PRICE_TABLE.flatMap((group, gIdx) => {
+                const totalRows = group.cats.reduce((s, c) => s + c.items.length, 0);
+                let noteAdded = false;
+                return group.cats.flatMap((cat) =>
+                  cat.items.map((item, iIdx) => {
+                    const firstInCat   = iIdx === 0;
+                    const firstInGroup = firstInCat && !noteAdded;
+                    if (firstInGroup) noteAdded = true;
+                    return (
+                      <tr
+                        key={`${gIdx}-${cat.name}-${iIdx}`}
+                        className={group.sepBefore && firstInGroup ? "note-sep-row" : ""}
+                      >
+                        {firstInCat && (
+                          <td className="menu-category" rowSpan={cat.items.length}>
+                            <strong>{cat.name}</strong>
+                          </td>
+                        )}
+                        <td className="menu-name">{item.menu}</td>
+                        <td className="menu-unit">{item.unit}</td>
+                        <td className="menu-price">{item.price}</td>
+                        {firstInGroup && (
+                          <td className="menu-note" rowSpan={totalRows}>
+                            {group.note.split("\n").map((line, li) => (
+                              <span key={li}>{line}<br /></span>
+                            ))}
+                          </td>
+                        )}
+                      </tr>
+                    );
+                  })
+                );
               })}
             </tbody>
           </table>
