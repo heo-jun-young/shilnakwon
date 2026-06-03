@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&display=swap');
 
 /* ═══════════════════════════════════════
    쉴낙원 안양 장례식장 — Global Styles v2
@@ -79,8 +80,8 @@ body {
 .content-section { max-width: 800px; margin: 0 auto; padding: 50px 24px 80px; }
 .section-sep { max-width: 800px; margin: 0 auto; height: 1px; background: var(--border-light); }
 .section-eng { font-size: 12px; letter-spacing: 4px; color: var(--gold); margin-bottom: 8px; font-weight: 400; }
-.section-title { font-size: 28px; font-weight: 700; color: var(--text-dark); margin-bottom: 40px; }
-.sub-title { font-size: 22px; font-weight: 700; color: var(--text-dark); margin-top: 48px; margin-bottom: 12px; }
+.section-title { font-size: 28px; font-weight: 700; color: var(--text-dark); margin-bottom: 40px; font-family: 'Noto Serif KR', serif; }
+.sub-title { font-size: 22px; font-weight: 700; color: var(--text-dark); margin-top: 48px; margin-bottom: 12px; font-family: 'Noto Serif KR', serif; }
 .divider { height: 1px; background: var(--border-light); margin-bottom: 24px; }
 
 /* ═══════ NUMBERED LIST ═══════ */
@@ -143,7 +144,7 @@ body {
 .step-label { font-size: 15px; color: var(--text-body); }
 
 /* ═══════ METHOD (분향/헌화) — 원형 아이콘 ═══════ */
-.method-title { font-size: 18px; font-weight: 700; text-align: center; margin-top: 40px; margin-bottom: 12px; }
+.method-title { font-size: 18px; font-weight: 700; text-align: center; margin-top: 40px; margin-bottom: 12px; font-family: 'Noto Serif KR', serif; }
 .method-list { margin-bottom: 32px; }
 .method-item {
   display: flex;
@@ -167,7 +168,7 @@ body {
   width: 100% !important;
   height: 100% !important;
   object-fit: cover !important;
-  transform: scale(2.5);
+  transform: scale(1.5);
   transform-origin: center center;
 }
 .method-content { flex: 1; }
@@ -266,7 +267,8 @@ body {
 /* ═══════ ALLERGY ═══════ */
 .allergy-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  align-items: start;
   gap: 12px;
   margin-bottom: 24px;
 }
@@ -280,8 +282,8 @@ body {
   padding: 16px;
 }
 .allergy-icon-wrap {
-  width: 45px;
-  height: 45px;
+  width: 60px;
+  height: 60px;
   flex-shrink: 0;
   border-radius: 50%;
   overflow: hidden;
@@ -294,7 +296,7 @@ body {
   width: 100% !important;
   height: 100% !important;
   object-fit: cover !important;
-  transform: scale(2.5);
+  transform: scale(1.5);
   transform-origin: center center;
 }
 .allergy-name { font-size: 16px; font-weight: 700; color: var(--text-dark); display: block; margin-bottom: 4px; }
@@ -421,5 +423,4 @@ body {
   .menu-note { font-size: 9px !important; max-width: none; line-height: 1.4; word-break: keep-all; }
   .menu-unit, .menu-price { white-space: normal; }
   .menu-origin { font-size: 10px; word-break: keep-all; }
-  .allergy-grid { grid-template-columns: repeat(2, 1fr); }
 }
