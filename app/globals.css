@@ -401,23 +401,28 @@ tr.note-sep-row > td { border-top: 2px solid var(--border-light) !important; }
     min-width: 0;
     width: 100%;
     table-layout: fixed;
-    font-size: 10px;
+    font-size: 9px;
   }
-  .menu-table thead th { padding: 5px 2px; font-size: 10px; white-space: normal; }
-  .menu-table tbody td { padding: 4px 2px; font-size: 10px !important; }
-  .menu-category { width: 45px; font-size: 10px; }
-  .menu-name { width: auto; white-space: nowrap; font-size: 9px !important; }
-  col.col-cat   { width: 42px; }
+  .menu-table thead th { padding: 3px 1px; font-size: 9px; white-space: normal; }
+  .menu-table tbody td { padding: 3px 1px; font-size: 9px !important; }
+  .menu-category { width: 40px; font-size: 9px; }
+  .menu-name { width: auto; white-space: nowrap; font-size: 8px !important; }
+  col.col-cat   { width: 40px; }
   col.col-menu  { width: auto; }
-  col.col-unit  { width: 28px; }
-  col.col-price { width: 58px; }
+  col.col-unit  { width: 24px; }
+  col.col-price { width: 54px; }
   col.col-note  { width: 130px; }
-  .menu-note { font-size: 10px !important; max-width: none; line-height: 1.45; word-break: keep-all; }
-  .menu-unit { white-space: normal; font-size: 9px !important; }
-  .menu-price { white-space: normal; font-size: 9px !important; }
-  .menu-origin { font-size: 10px; word-break: keep-all; }
+  .menu-note { font-size: 9px !important; max-width: none; line-height: 1.4; word-break: keep-all; }
+  .menu-unit { white-space: normal; font-size: 8px !important; }
+  .menu-price { white-space: normal; font-size: 8px !important; }
+  .menu-origin { font-size: 9px; word-break: keep-all; }
   .allergy-card { padding: 14px 16px; gap: 12px; }
   .allergy-icon { width: 40px; height: 40px; }
   .radio-option { font-size: 12px; padding: 10px 12px; }
   .radio-option span { font-size: 12px; }
+}
+
+@media (max-width: 480px) {
+  .hero-title { font-size: 20px; }
+  .hero-sub { font-size: 12px; }
 }

@@ -250,7 +250,7 @@ export default function ShilnakwonPage() {
         <ol className="numbered-list">
           <li><span className="num">01</span>장례식장에 도착하면 먼저 조객록에 서명한다.</li>
           <li><span className="num">02</span>부의금은 문상이 끝난 후 내는 것이 기본이지만, 조객록 서명 시 함께 내기도 하니 주변 분위기에 맞추면 된다.</li>
-          <li><span className="num">03</span>상가의 종교나 집안 문화에 따라 문상법의 차이가 있으니 주의할 점이 있는지 물어보는 것이 좋다.</li>
+          <li><span className="num">03</span><span>상가의 종교나 집안 문화에 따라 문상법의 차이가 있으니 주의할 점이 있는지 물어보는 것이 좋다.<br />특별히 없을 경우, 본인의 종교에 맞는 예법에 따른다.</span></li>
         </ol>
 
         {/* ── 조문 순서 ── */}
